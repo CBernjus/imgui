@@ -21,6 +21,7 @@ add_library(
 )
 
 # TODO: do something to prevent available scope <imgui.h> instead of <imgui/imgui.h>
-target_include_directories(imgui PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(imgui PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(imgui SYSTEM INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(imgui glfw)
